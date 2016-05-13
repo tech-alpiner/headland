@@ -1,2 +1,1 @@
-web: waitress-serve --port=$PORT headland.wsgi:application
-
+web: gunicorn headland.wsgi --log-file -
