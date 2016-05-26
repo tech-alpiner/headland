@@ -1,0 +1,35 @@
+{% extends 'headland/base.html' %}
+{% load staticfiles %}
+
+{% load widget_tweaks %}
+
+{% load i18n %}
+
+{% block title %}
+  New Post - HeadLand
+{% endblock %}
+
+{% block nav-item-left %}>
+  <li><a href="{% url 'post_list' %}">Blog</a></li>
+  <li><a href="{% url 'contact' %}">Contact</a></li>
+  <li><a href="#">Ideas</a></li>
+  <!-- <li><a data-ct-checkout="">Donate</a></li> -->
+{% endblock %}
+
+{% block content %}
+<div class="col-md-10 col-md-offset-1">
+    <h1>New post</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="title">{% trans "Title" %}</label>
+    {% render_field form.title class+="form-control" %}
+    <label for="text">{% trans "Text" %}</label>
+    {% render_field form.text rows="10" cols="50" class+="form-control" %}
+    <br>
+    <a class="cancel btn btn-danger" href="{{request.META.HTTP_REFERER}}">Cancel</a>
+    <button type="submit" class="save btn btn-success pull-right">Save</button>
+  </form>
+  </div>
+{% endblock %}
+
+

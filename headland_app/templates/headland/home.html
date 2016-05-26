@@ -1,12 +1,14 @@
 {% extends 'headland/base.html' %}
 
+{% load i18n %}
+
 {% block title %}
   HeadLand
 {% endblock %}
 
-{% block nav-item %}>
-  <li><a href="#">Blog</a></li>
-  <li><a href="#">Contact</a></li>
+{% block nav-item-left %}>
+  <li><a href="{% url 'post_list' %}">Blog</a></li>
+  <li><a href="{% url 'contact' %}">Contact</a></li>
   <li><a href="#">Ideas</a></li>
   <!-- <li><a data-ct-checkout="">Donate</a></li> -->
 {% endblock %}

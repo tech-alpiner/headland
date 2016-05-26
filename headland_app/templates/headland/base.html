@@ -34,11 +34,14 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="/"><b>{% trans "HeadLand" %}</b></a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              
               <ul class="nav navbar-nav navbar-right">
-                {% block nav-item %}
+                {% block nav-item-left %}
+                {% endblock %}
+              </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">            
+              <ul class="nav navbar-nav navbar-right">
+                {% block nav-item-right %}
                 {% endblock %}
                 {% if user.is_authenticated %}
                   <li><a href="#">{{ user.username }}</a></li>

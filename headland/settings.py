@@ -30,7 +30,8 @@ REGISTRATION_OPEN = True
 ACCOUNT_ACTIVATION_DAYS = 7
 # REGISTRATION_AUTO_LOGIN = True
 LOGIN_REDIRECT_URL = '/'  # The page you want users to arrive at after they successful log in
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = 'users:auth_login'
+LOGOUT_URL = 'users:auth_logout'
 
 # Application definition
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'registration',
     'headland_app',
+    'widget_tweaks',
 )
 
 MIDDLEWARE_CLASSES = (

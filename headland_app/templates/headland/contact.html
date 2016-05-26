@@ -1,0 +1,36 @@
+{% extends 'headland/base.html' %}
+
+{% load i18n %}
+
+{% block title %}
+    Contact - HeadLand
+{% endblock %}
+
+{% block nav-item-left %}>
+  <li><a href="{% url 'post_list' %}">Blog</a></li>
+  <li><a href="{% url 'contact' %}">Contact</a></li>
+  <li><a href="#">Ideas</a></li>
+  <!-- <li><a data-ct-checkout="">Donate</a></li> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="panel-body">
+    <h2>Need Help? or say Hi?</h2>
+    <p>Shoot me an <a href="mailto:romatill2@gmail.com">email</a> or <a href="https://www.facebook.com/rodmyt" target="_blank">facebook</a>.</p>
+
+    <p>If you need help, I suggest first Googling around for the error message or topic at hand. If you can’t get anywhere, or simply don’t understand, feel free to email me.</p>
+
+    <h2>My social network accounts:</h2>
+    <ul class="list-inline">
+        <li><a href="https://www.facebook.com/rodmyt" target="_blank">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/in/roman-dmytriv-bb4780b3" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/Fiques" target="_blank">GitHub</a></li>
+        <li><a href="https://twitter.com/_rodmyt" target="_blank">Twitter</a></li>
+    </ul>
+
+    <h2>Want to contribute?</h2>
+    <p>Go ahead and check out the <a href="https://github.com/Fiques/dmytriv-portfolio" target="_blank">GitHub</a> repo. I’m sure I’ve made gross errors somewhere.</p>
+  </div>
+
+{% endblock %}
