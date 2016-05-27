@@ -1,0 +1,23 @@
+{% extends "headland/base.html" %}
+
+{% block content %}
+<h2>{{ object.userprofile.first_name }} {{ object.userprofile.last_name }}'s Profile</h2>
+<hr>
+{% if object.userprofile.bio %}
+<div>
+<b>About Me:</b>
+{{ object.userprofile.bio }}
+</div>
+
+<br>
+{{ object.userprofile.github }}
+
+
+{% comment %}
+{{ object.userprofile.avatar }}
+{% endcomment %}
+{% endif %}
+
+
+<p><a href='{% url "edit_profile" %}'>Edit my profile</a></p>
+{% endblock %}

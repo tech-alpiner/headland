@@ -1,0 +1,17 @@
+{% extends "headland/base.html" %}
+
+{% block content %}
+<h2>{{ user.username }}'s Profile</h2>
+
+<form method="post" action="">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Edit">
+</form>
+
+
+{% if object.username == user.username %}
+<p><a href='{% url "edit_profile" %}'>Edit my profile</a></p>
+{% endif %}
+
+{% endblock %}

@@ -1,15 +1,30 @@
 from django import forms
-from models import Post
+from models import Post, UserProfile
 from django.contrib.auth.models import User
+from registration.forms import RegistrationForm
+from awesome_avatar import forms as avatar_forms
 
 
-class UserForm(forms.ModelForm):
+class AvatarChangeForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ('first_name', 'last_name')
+        model = UserProfile
+        fields = ['avatar']
+
+
+class UploadAndCropImageForm(forms.ModelForm):
+    image = avatar_forms.AvatarField()
+
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        exclude = ("user",)
+
 
 class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
         fields = ('title', 'text',)
+
+

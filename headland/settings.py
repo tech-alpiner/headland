@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'registration',
     'headland_app',
     'widget_tweaks',
+    'awesome_avatar',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -135,6 +136,21 @@ STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
+AWESOME_AVATAR = {
+    'width': 100,
+    'height': 100,
+
+    'select_area_width': 400,
+    'select_area_height': 300,
+
+    'save_quality': 90,
+    'save_format': 'png',
+}

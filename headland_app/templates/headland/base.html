@@ -44,7 +44,7 @@
                 {% block nav-item-right %}
                 {% endblock %}
                 {% if user.is_authenticated %}
-                  <li><a href="#">{{ user.username }}</a></li>
+                  <li><a href="/users/{{ user.username }}">{{ user.username }}</a></li>
                   <li><a href="{% url "users:auth_logout" %}">{% trans "Sign Out" %}</a></li>
                 {% else %}
                 <li><a href="{% url "users:auth_login" %}">{% trans "Sign In" %}</a></li>
